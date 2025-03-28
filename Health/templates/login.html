@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Connect - Login</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-heartbeat heart-icon"></i>
+                        <i class="fas fa-plus plus-icon"></i>
+                        <i class="fas fa-hospital hospital-icon"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="health">Health</span>
+                        <span class="connect">Connect</span>
+                    </div>
+                </div>
+                <h1>Welcome to Health Connect</h1>
+                <p>Please login to continue</p>
+            </div>
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="uname">
+                        <i class="fas fa-user"></i> Username
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" 
+                               class="form-control" 
+                               id="uname" 
+                               name="uname" 
+                               placeholder="Enter your username"
+                               required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </div>
+                        <input type="password" 
+                               class="form-control" 
+                               id="pwd" 
+                               name="pwd" 
+                               placeholder="Enter your password"
+                               required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-login btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+
+                <div class="error-message" id="error-message">
+                    Invalid username or password
+                </div>
+            </form>
+
+            <div class="register-link">
+                <p>Don't have an account?</p>
+                <a href="{% url 'register' %}" class="btn-register">
+                    <i class="fas fa-user-plus"></i> Register Now
+                </a>
+            </div>
+
+            <div class="social-divider">
+                <span>or connect with</span>
+            </div>
+
+            <div class="social-login">
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-social btn-google" title="Login with Google">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        {% if error %}
+            document.getElementById('error-message').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('error-message').style.display = 'none';
+            }, 3000);
+        {% endif %}
+    </script>
+</body>
+</html>

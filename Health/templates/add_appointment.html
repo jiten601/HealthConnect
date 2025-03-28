@@ -1,0 +1,203 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="view-container container">
+    <div class="view-header">
+        <div class="view-title">
+            <i class="fas fa-calendar-check"></i>
+            <span>Schedule New Appointment</span>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div id="successMessage" class="alert alert-success text-center" style="display: none">
+            Appointment scheduled successfully
+        </div>
+
+        <form method="post" action="{% url 'add_appointment' %}" id="appointmentForm" class="professional-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="doctor">
+                    <i class="fas fa-user-md"></i>
+                    Select Doctor
+                </label>
+                <div class="select-container">
+                    <select id="doctor" 
+                            class="form-control" 
+                            name="doctor" 
+                            required>
+                        <option value="">Select Doctor</option>
+                        {% for doctor in doctors %}
+                            <option value="{{ doctor.id }}">Dr. {{ doctor.name }} ({{ doctor.special }})</option>
+                        {% endfor %}
+                    </select>
+                    <div id="selectedDoctorDisplay" class="selected-badge doctor-badge" style="display: none;">
+                        <i class="fas fa-user-md"></i>
+                        <span id="selectedDoctorText"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="patient">
+                    <i class="fas fa-user"></i>
+                    Select Patient
+                </label>
+                <div class="select-container">
+                    <select id="patient" 
+                            class="form-control" 
+                            name="patient" 
+                            required>
+                        <option value="">Select Patient</option>
+                        {% for patient in patients %}
+                            <option value="{{ patient.id }}">{{ patient.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div id="selectedPatientDisplay" class="selected-badge patient-badge" style="display: none;">
+                        <i class="fas fa-procedures"></i>
+                        <span id="selectedPatientText"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="date1">
+                    <i class="fas fa-calendar"></i>
+                    Appointment Date
+                </label>
+                <input type="date" 
+                       id="date1" 
+                       class="form-control" 
+                       name="date1" 
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="time1">
+                    <i class="fas fa-clock"></i>
+                    Appointment Time
+                </label>
+                <input type="time" 
+                       id="time1" 
+                       class="form-control" 
+                       name="time1" 
+                       required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-calendar-plus"></i> Schedule Appointment
+                </button>
+                <a href="{% url 'view_appointment' %}" class="btn btn-secondary">
+                    <i class="fas fa-times-circle"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.select-container {
+    position: relative;
+}
+
+.selected-badge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.selected-badge i {
+    font-size: 1.2rem;
+}
+
+.doctor-badge {
+    background-color: rgba(26, 115, 232, 0.1);
+    color: #1a73e8;
+}
+
+.patient-badge {
+    background-color: rgba(52, 168, 83, 0.1);
+    color: #34a853;
+}
+
+#doctor, #patient {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+#doctor option, #patient option {
+    color: #2d3436;
+}
+
+#doctor.with-value, #patient.with-value {
+    color: transparent;
+}
+</style>
+
+<script>
+// Handle doctor selection
+document.getElementById('doctor').addEventListener('change', function() {
+    const selectedOption = this.options[this.selectedIndex];
+    const doctorDisplay = document.getElementById('selectedDoctorDisplay');
+    const doctorText = document.getElementById('selectedDoctorText');
+    
+    if (this.value) {
+        doctorDisplay.style.display = 'flex';
+        doctorText.textContent = selectedOption.text;
+        this.classList.add('with-value');
+    } else {
+        doctorDisplay.style.display = 'none';
+        this.classList.remove('with-value');
+    }
+});
+
+// Handle patient selection
+document.getElementById('patient').addEventListener('change', function() {
+    const selectedOption = this.options[this.selectedIndex];
+    const patientDisplay = document.getElementById('selectedPatientDisplay');
+    const patientText = document.getElementById('selectedPatientText');
+    
+    if (this.value) {
+        patientDisplay.style.display = 'flex';
+        patientText.textContent = selectedOption.text;
+        this.classList.add('with-value');
+    } else {
+        patientDisplay.style.display = 'none';
+        this.classList.remove('with-value');
+    }
+});
+
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    const successDiv = document.getElementById("successMessage");
+    const form = this;
+    
+    if (form.checkValidity()) {
+        successDiv.style.display = "block";
+        setTimeout(function() {
+            successDiv.style.display = "none";
+            window.location.href = "{% url 'view_appointment' %}";
+        }, 2000);
+    }
+});
+
+{% if error == "yes" %}
+alert("Something went wrong, please try again");
+{% endif %}
+</script>
+
+{% endblock %}

@@ -1,0 +1,224 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="contact-container">
+    <!-- Hero Section -->
+    <div class="contact-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1 class="hero-title">Contact <span class="text-primary">Us</span></h1>
+                    <p class="hero-subtitle">We would love to hear from you! If you have any questions, feedback, or inquiries, please feel free to reach out to us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="container">
+            <!-- Contact Information -->
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p><a href="tel: +977 9814302810">+977 9814302810</a></p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:jitenshah601@gmail.com">jitenshah601@gmail.com</a></p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p><a href="http://maps.google.com/maps?q=Inaruwa" target="_blank">Inaruwa</a></p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Office Hours</h3>
+                        <p>9:00 AM to 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section" data-aos="fade-up">
+        <div class="container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.730711391188!2d87.14771661502711!3d26.559751983285977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6c6e4052c663%3A0x8f84ca798b7231c8!2sInaruwa%2C%20Nepal!5e0!3m2!1sen!2sus!4v1645162619179!5m2!1sen!2sus"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Contact Page Styles */
+.contact-container {
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.contact-hero {
+    background: linear-gradient(135deg,rgb(4, 77, 151) 0%,rgb(34, 112, 46) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color:rgb(150, 203, 249);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color:rgb(201, 213, 218);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 0 0 80px 0;
+}
+
+/* Contact Information */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    transition: all 0.3s ease;
+}
+
+/* Call Us icon specific style */
+.info-card:first-child .card-icon {
+    background-color: #00D1B2;
+    box-shadow: 0 0 20px rgba(0, 209, 178, 0.3);
+}
+
+/* Email Us icon specific style */
+.info-card:nth-child(2) .card-icon {
+    background-color: #4267B2;
+    box-shadow: 0 0 20px rgba(66, 103, 178, 0.3);
+}
+
+/* Visit Us icon specific style */
+.info-card:nth-child(3) .card-icon {
+    background-color: #E195AB;
+    box-shadow: 0 0 20px rgba(66, 103, 178, 0.3);
+}
+
+/* Office Hours icon specific style */
+.info-card:nth-child(4) .card-icon {
+    background-color: #336D82;
+    box-shadow: 0 0 20px rgba(66, 103, 178, 0.3);
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 0.75rem;
+}
+
+.info-card p, .info-card a {
+    color: #4267B2;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Map Section */
+.map-section {
+    padding: 0 0 80px 0;
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .contact-info {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .info-card {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .info-card {
+        width: 100%;
+    }
+}
+</style>
+
+{% endblock %}

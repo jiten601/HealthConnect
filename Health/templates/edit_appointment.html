@@ -1,0 +1,70 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-top: 50px">
+  <h2 class="text-center">Edit Appointment</h2>
+  <br><br>
+
+  <div id="successMessage" class="alert alert-success text-center" style="display: none">
+    Appointment updated successfully
+  </div>
+
+  <form method="post" action="{% url 'edit_appointment' appointment.id %}" id="appointmentForm">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="doctor">Doctor</label>
+      <select id="doctor" class="form-control" name="doctor" required>
+        <option value="">Select Doctor</option>
+        {% for doctor in doctors %}
+          <option value="{{ doctor.id }}" {% if doctor.id == appointment.doctor.id %}selected{% endif %}>
+            {{ doctor.name }} ({{ doctor.special }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="patient">Patient</label>
+      <select id="patient" class="form-control" name="patient" required>
+        <option value="">Select Patient</option>
+        {% for patient in patients %}
+          <option value="{{ patient.id }}" {% if patient.id == appointment.patient.id %}selected{% endif %}>
+            {{ patient.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="date1">Date</label>
+      <input type="date" id="date1" class="form-control" name="date1" value="{{ appointment.date1|date:'Y-m-d' }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time1">Time</label>
+      <input type="time" id="time1" class="form-control" name="time1" value="{{ appointment.time1|time:'H:i' }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Update Appointment</button>
+  </form>
+
+  {% if error == "no" %}
+  <script>
+    const successDiv = document.getElementById("successMessage");
+    successDiv.style.display = "block";
+    setTimeout(function () {
+      successDiv.style.display = "none";
+      window.location.href = "{% url 'view_appointment' %}";
+    }, 2000);
+  </script>
+  {% endif %}
+
+  {% if error == "yes" %}
+  <script>
+    alert("Something went wrong, please try again");
+  </script>
+  {% endif %}
+</div>
+
+{% endblock %} 

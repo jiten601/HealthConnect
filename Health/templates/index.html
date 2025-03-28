@@ -1,0 +1,91 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="view-container container">
+    <div class="view-header">
+        <div class="view-title">
+            <i class="fas fa-chart-line"></i>
+            <span>Admin Dashboard</span>
+        </div>
+    </div>
+
+    <div class="dashboard-stats">
+        <div class="row">
+            <!-- Doctors Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon doctor-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <h3 class="dashboard-card-title">Total Doctors</h3>
+                        <div class="dashboard-card-number">{{ d }}</div>
+                        <a href="{% url 'view_doctor' %}" class="dashboard-card-link">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patients Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon patient-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <h3 class="dashboard-card-title">Total Patients</h3>
+                        <div class="dashboard-card-number">{{ p }}</div>
+                        <a href="{% url 'view_patient' %}" class="dashboard-card-link">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointments Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon appointment-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <h3 class="dashboard-card-title">Total Appointments</h3>
+                        <div class="dashboard-card-number">{{ a }}</div>
+                        <a href="{% url 'view_appointment' %}" class="dashboard-card-link">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="quick-actions">
+        <h4 class="section-title">Quick Actions</h4>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-3">
+                <a href="{% url 'add_doctor' %}" class="quick-action-card">
+                    <i class="fas fa-user-md"></i>
+                    <span>Add New Doctor</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-3">
+                <a href="{% url 'add_patient' %}" class="quick-action-card">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add New Patient</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-3">
+                <a href="{% url 'add_appointment' %}" class="quick-action-card">
+                    <i class="fas fa-calendar-plus"></i>
+                    <span>Schedule Appointment</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-top: 50px">
+  <h2 class="text-center">Edit Doctor</h2>
+  <br><br>
+
+  <div id="successMessage" class="alert alert-success text-center" style="display: none">
+    Doctor updated successfully
+  </div>
+
+  <form method="post" action="{% url 'edit_doctor' doctor.id %}" id="doctorForm">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Doctor Name</label>
+      <input type="text" id="name" class="form-control" name="name" value="{{ doctor.name }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Contact</label>
+      <input type="text" id="mobile" class="form-control" name="mobile" value="{{ doctor.mobile }}" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="special">Specialization</label>
+      <input type="text" id="special" class="form-control" name="special" value="{{ doctor.special }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Update Doctor</button>
+  </form>
+
+  {% if error == "no" %}
+  <script>
+    const successDiv = document.getElementById("successMessage");
+    successDiv.style.display = "block";
+    setTimeout(function () {
+      successDiv.style.display = "none";
+      window.location.href = "{% url 'view_doctor' %}";
+    }, 2000);
+  </script>
+  {% endif %}
+
+  {% if error == "yes" %}
+  <script>
+    alert("Something went wrong, please try again");
+  </script>
+  {% endif %}
+</div>
+
+{% endblock %} 

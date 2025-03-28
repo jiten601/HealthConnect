@@ -1,0 +1,125 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="view-container container">
+    <div class="view-header">
+        <div class="view-title">
+            <i class="fas fa-calendar-check"></i>
+            <span>Appointments Directory</span>
+        </div>
+        <div class="filter-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="appointmentSearch" placeholder="Search appointments...">
+            </div>
+            <a href="{% url 'add_appointment' %}" class="btn-action btn-view">
+                <i class="fas fa-plus"></i> New Appointment
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="custom-table" id="appointmentsTable">
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Doctor</th>
+                    <th>Patient</th>
+                    <th>Schedule</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.id }}</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-user-md" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                            <div>
+                                <div style="font-weight: 500;">Dr. {{ appointment.doctor.name }}</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">{{ appointment.doctor.special }}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-user" style="color: var(--secondary-color); font-size: 1.5rem;"></i>
+                            <div>
+                                <div style="font-weight: 500;">{{ appointment.patient.name }}</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Patient</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <i class="fas fa-calendar" style="color: var(--accent-color);"></i>
+                                {{ appointment.date1 }}
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <i class="fas fa-clock" style="color: var(--accent-color);"></i>
+                                {{ appointment.time1 }}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge status-active">
+                            <i class="fas fa-check-circle"></i>
+                            Scheduled
+                        </span>
+                    </td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{% url 'edit_appointment' appointment.id %}" class="btn-action btn-edit" title="Edit Appointment">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="{% url 'delete_appointment' appointment.id %}" 
+                               onclick="return confirm('Are you sure you want to cancel this appointment?')" 
+                               class="btn-action btn-delete" title="Cancel Appointment">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">
+                        <div class="empty-state">
+                            <i class="fas fa-calendar-times"></i>
+                            <h3>No Appointments Found</h3>
+                            <p>Start by scheduling a new appointment.</p>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+document.getElementById('appointmentSearch').addEventListener('keyup', function() {
+    let searchText = this.value.toLowerCase();
+    let table = document.getElementById('appointmentsTable');
+    let rows = table.getElementsByTagName('tr');
+
+    for (let row of rows) {
+        if (row.getElementsByTagName('td').length) {
+            let found = false;
+            let cells = row.getElementsByTagName('td');
+            for (let cell of cells) {
+                if (cell.textContent.toLowerCase().indexOf(searchText) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+            row.style.display = found ? '' : 'none';
+        }
+    }
+});
+</script>
+
+{% endblock %}

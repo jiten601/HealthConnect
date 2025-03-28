@@ -1,0 +1,1114 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="about-container">
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <div class="hero-particles" id="particles-js"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-right">
+                        <div class="hero-badge">Welcome to</div>
+                        <h1>Health<span class="text-primary">Connect</span></h1>
+                        <p class="lead">Transforming Healthcare Management Through Innovation and Compassion</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="counter">100</h3>
+                                    <p>Expert Doctors</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="counter">500</h3>
+                                    <p>Happy Patients</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="counter">1000</h3>
+                                    <p>Appointments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-container" data-aos="fade-left">
+                        <div class="hero-image">
+                            <img src="{% static 'images/about.jpg' %}" alt="Healthcare Illustration">
+                        </div>
+                        {% comment %} <div class="floating-card card-1">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Professional Care</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Service</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Safe & Secure</span>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="mission-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <div class="section-title">
+                        <span class="subtitle">Our Purpose</span>
+                        <h2>Our Mission & Values</h2>
+                        <div class="title-line"></div>
+                    </div>
+                </div>
+            </div>
+<div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-hand-holding-medical"></i>
+                            </div>
+                        </div>
+                        <h3>Quality Healthcare</h3>
+                        <p>Delivering exceptional healthcare services with a focus on patient comfort and recovery through innovative medical solutions.</p>
+                        <div class="card-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <h3>Patient-Centered Care</h3>
+                        <p>Prioritizing patient needs with personalized attention and comprehensive care plans tailored to individual requirements.</p>
+                        <div class="card-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-laptop-medical"></i>
+                            </div>
+                        </div>
+                        <h3>Modern Technology</h3>
+                        <p>Leveraging cutting-edge technology and digital solutions for efficient healthcare management and improved patient outcomes.</p>
+                        <div class="card-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="features-content">
+                        <span class="subtitle">Why Choose Us</span>
+                        <h2>Experience Healthcare Excellence</h2>
+                        <p class="features-intro">Discover why HealthConnect is the preferred choice for modern healthcare management:</p>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Smart Appointment System</h4>
+                                    <p>Schedule and manage appointments effortlessly with our intuitive booking system.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Expert Healthcare Team</h4>
+                                    <p>Access to qualified and experienced medical practitioners for quality care.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-medical-alt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Digital Health Records</h4>
+                                    <p>Secure and organized management of patient information and medical history.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>24/7 Support</h4>
+                                    <p>Round-the-clock assistance for all your healthcare management needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="features-image-wrapper">
+                        <div class="features-image">
+                            <img src="https://img.freepik.com/premium-photo/clinic-profession-people-health-care-medicine-concept-group-happy-medics-doctors-hospital-corridor-showing-ok-hand-sign_380164-132891.jpg?ga=GA1.1.1596621059.1743127800" alt="Healthcare Features">
+                        </div>
+                        <div class="experience-badge">
+                            <div class="badge-content">
+                                <span class="years">5+</span>
+                                <span class="text">Years of<br>Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <div class="section-title">
+                        <span class="subtitle">Our Experts</span>
+                        <h2>Meet Our Leadership</h2>
+                        <div class="title-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://img.freepik.com/premium-photo/portrait-male-doctor-with-stethoscope-arm-cross-isolated-white-wall-health-insurance-concept_3544-1512.jpg?ga=GA1.1.1596621059.1743127800&semt=ais_hybrid" alt="Team Member">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="position">Chief Medical Officer</span>
+                            <h4>Dr. Shivam Shah</h4>
+                            <p>Specialized in Internal Medicine with 15+ years of experience in healthcare management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg?ga=GA1.1.1596621059.1743127800&semt=ais_hybrid" alt="Team Member">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="position">Head of Patient Care</span>
+                            <h4>Dr. Sushil Bhandari</h4>
+                            <p>Expert in Patient Care Management with a focus on improving healthcare delivery systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://img.freepik.com/premium-photo/photo-smiling-doctor-with-strethoscope-isolated-one-color-background_953680-46532.jpg?ga=GA1.1.1596621059.1743127800" alt="Team Member">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="position">Technical Director</span>
+                            <h4>Dr. Ishan Karki</h4>
+                            <p>Leading innovation in healthcare technology and digital transformation initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <div class="section-title">
+                        <span class="subtitle">Testimonials</span>
+                        <h2>What Our Patients Say</h2>
+                        <div class="title-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="testimonial-text">"The healthcare management system at HealthConnect has made it incredibly easy to schedule appointments and keep track of my medical records. The staff is professional and caring."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://img.freepik.com/free-photo/smiling-young-beautiful-girl-pointing-right-side-with-copy-space_141793-92529.jpg?ga=GA1.1.1596621059.1743127800&semt=ais_hybrid" alt="Patient">
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Rachna Shrestha</h5>
+                                        <span>Patient</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="testimonial-text">"As a regular patient, I appreciate the efficient appointment system and the way my medical history is managed. The doctors are knowledgeable and take time to explain everything."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://img.freepik.com/free-photo/joyful-young-boy-looking-side-showing-thumbs-up-isolated-pink-wall_141793-110086.jpg?ga=GA1.1.1596621059.1743127800" alt="Patient">
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Rohit Bhattarai</h5>
+                                        <span>Patient</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<style>
+/* Enhanced About Page Styles */
+.about-container {
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 120px 0 100px;
+    margin-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(26, 115, 232, 0.1);
+    color: var(--primary-color);
+    border-radius: 25px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards 0.2s;
+}
+
+.hero-content .lead {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards 0.4s;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s ease forwards 0.6s;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.stat-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.stat-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.hero-image-container {
+    position: relative;
+    padding: 2rem;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.5s ease forwards 0.4s;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+    opacity: 0;
+    animation: floatIn 0.5s ease forwards;
+}
+
+.floating-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.floating-card span {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.card-1 {
+    top: 10%;
+    left: 0;
+    animation-delay: 1.2s;
+}
+
+.card-2 {
+    top: 40%;
+    right: 0;
+    animation-delay: 1.4s;
+}
+
+.card-3 {
+    bottom: 10%;
+    left: 20%;
+    animation-delay: 1.6s;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Counter Animation */
+.counter {
+    display: inline-block;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 100px 0;
+    background: white;
+    position: relative;
+}
+
+.section-title {
+    margin-bottom: 4rem;
+}
+
+.subtitle {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(26, 115, 232, 0.1);
+    color: var(--primary-color);
+    border-radius: 25px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.title-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.mission-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.mission-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.mission-card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.4s ease;
+}
+
+.mission-card:hover .icon-wrapper {
+    background: white;
+}
+
+.icon-wrapper i {
+    font-size: 2.5rem;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.mission-card:hover .icon-wrapper i {
+    color: var(--primary-color);
+}
+
+.mission-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.mission-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.mission-card:hover h3,
+.mission-card:hover p {
+    color: white;
+}
+
+.card-hover {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.mission-card:hover .card-hover {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-hover i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+.features-content {
+    padding-right: 3rem;
+}
+
+.features-content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.features-intro {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.feature-text h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.feature-text p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.features-image-wrapper {
+    position: relative;
+    padding: 2rem;
+}
+
+.features-image {
+    position: relative;
+    z-index: 2;
+}
+
+.features-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+.badge-content {
+    text-align: center;
+}
+
+.badge-content .years {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    display: block;
+}
+
+.badge-content .text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Team Section */
+.team-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.team-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.team-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(26, 115, 232, 0.9), rgba(0, 89, 178, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .social-links a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.team-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.team-info .position {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(26, 115, 232, 0.1);
+    color: var(--primary-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.team-info h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.team-info p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 1rem;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(26, 115, 232, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+}
+
+.author-info span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.swiper-container {
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .team-section,
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .team-card {
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<!-- Add required libraries -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script>
+// Initialize particles.js
+particlesJS('particles-js', {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#1a73e8' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#1a73e8',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+        }
+    },
+    retina_detect: true
+});
+
+// Initialize counter-up
+$(document).ready(function() {
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+});
+</script>
+
+<!-- Add Swiper JS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 2,
+            },
+        },
+        autoplay: {
+            delay: 5000,
+        },
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="view-container container">
+    <div class="view-header">
+        <div class="view-title">
+            <i class="fas fa-procedures"></i>
+            <span>Patients Directory</span>
+        </div>
+        <div class="filter-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="patientSearch" placeholder="Search patients...">
+            </div>
+            <a href="{% url 'add_patient' %}" class="btn-action btn-view">
+                <i class="fas fa-user-plus"></i> Add New Patient
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="custom-table" id="patientsTable">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Details</th>
+                    <th>Contact</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.id }}</td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-procedures" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                            <div>
+                                <div style="font-weight: 500;">{{ patient.name }}</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Patient</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-phone" style="color: var(--secondary-color);"></i>
+                            {{ patient.mobile|default:"Not Provided" }}
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge {% if patient.gender == 'Male' %}status-male{% elif patient.gender == 'Female' %}status-female{% else %}status-other{% endif %}">
+                            <i class="fas {% if patient.gender == 'Male' %}fa-mars{% elif patient.gender == 'Female' %}fa-venus{% else %}fa-transgender{% endif %}"></i>
+                            {{ patient.gender }}
+                        </span>
+                    </td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i>
+                            {{ patient.address }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{% url 'edit_patient' patient.id %}" class="btn-action btn-edit" title="Edit Patient">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="{% url 'delete_patient' patient.id %}" 
+                               onclick="return confirm('Are you sure you want to remove this patient from the system?')" 
+                               class="btn-action btn-delete" title="Delete Patient">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">
+                        <div class="empty-state">
+                            <i class="fas fa-hospital-user"></i>
+                            <h3>No Patients Found</h3>
+                            <p>Start by adding a new patient to the system.</p>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+document.getElementById('patientSearch').addEventListener('keyup', function() {
+    let searchText = this.value.toLowerCase();
+    let table = document.getElementById('patientsTable');
+    let rows = table.getElementsByTagName('tr');
+
+    for (let row of rows) {
+        if (row.getElementsByTagName('td').length) {
+            let found = false;
+            let cells = row.getElementsByTagName('td');
+            for (let cell of cells) {
+                if (cell.textContent.toLowerCase().indexOf(searchText) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+            row.style.display = found ? '' : 'none';
+        }
+    }
+});
+</script>
+
+{% endblock %}
